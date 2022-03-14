@@ -3,8 +3,6 @@ var day = new Date().getDay();
 var month = new Date().getMonth();
 var date = new Date().getDate();
 
-var weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-
 var months = [
   'Jan',
   'Feb',
@@ -70,6 +68,7 @@ const setFirstColspan = (monthdate) => {
     var data = document.createElement('td');
     ele.appendChild(data);
     ele.cells[0].setAttribute('colspan', '' + monthdate);
+    ele.cells[0].classList.add('emptyDay');
   }
   setCalendarData(monthdate);
   setLastColspan();
@@ -78,7 +77,6 @@ const setFirstColspan = (monthdate) => {
 const setLastColspan = () => {
   var ele_len = document.getElementsByTagName('table')[0].rows;
   var ele = document.getElementsByTagName('table')[0].rows[ele_len.length - 1];
-  console.log(7 - ele.cells.length + 1);
   if (7 - ele.cells.length > 0) {
     var data = document.createElement('td');
     ele.appendChild(data);
@@ -86,6 +84,7 @@ const setLastColspan = () => {
       'colspan',
       '' + (7 - ele.cells.length + 1)
     );
+    ele.cells[ele.cells.length - 1].classList.add('emptyDay');
   }
 };
 
@@ -96,8 +95,12 @@ const setCalendarData = (monthdate) => {
   for (var i = monthdate; i <= 6; i++) {
     var data = document.createElement('td');
     var text = document.createTextNode(count);
-    count++;
+    const day = new Date(year, month, count).getDay();
+    if (day === 0 || day === 6) {
+      data.classList.add('redTd');
+    }
     data.appendChild(text);
+    count++;
     document.getElementsByTagName('table')[0].rows[2].appendChild(data);
   }
   var tempMonthDays = monthdays(year)[months[month]];
@@ -106,8 +109,12 @@ const setCalendarData = (monthdate) => {
     for (var j = 0; j < 7 && count <= tempMonthDays; j++) {
       var data = document.createElement('td');
       var text = document.createTextNode(count);
-      count++;
+      const day = new Date(year, month, count).getDay();
+      if (day === 0 || day === 6) {
+        data.classList.add('redTd');
+      }
       data.appendChild(text);
+      count++;
       row.append(data);
     }
     document.getElementsByTagName('table')[0].appendChild(row);
