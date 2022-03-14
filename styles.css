@@ -1,0 +1,58 @@
+th,
+td {
+  border: 2px solid black;
+}
+td,
+th {
+  padding: 10px;
+  text-align: center;
+}
+.actions {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.actions-2 {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  cursor: pointer;
+}
+.next-prev-button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #3d3d3d;
+}
+
+tr:first-child th {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: lightblue;
+  border-color: transparent;
+}
+td:hover {
+  background-color: offwhite;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.5);
+}
+td[colspan] {
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+tr th {
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: transparent;
+  background-color: lightgrey;
+  color: #3d3d3d;
+}
+tr td {
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: transparent;
+}
