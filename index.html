@@ -5,36 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <title>Calendar</title>
   </head>
   <body>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th data-selected="full-date" colspan="7"></th>
+    <div class="container">
+      <div class="calendar-div">
+        <div class="next-prev-button" onclick="changeMonth('prev')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="white"
+            class="bi bi-chevron-double-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            />
+          </svg>
+        </div>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th data-selected="full-date" colspan="7"></th>
+            </tr>
+          </thead>
+          <tr class="border_bottom">
+            <td class="redTd">S</td>
+            <td>M</td>
+            <td>T</td>
+            <td>W</td>
+            <td>T</td>
+            <td>F</td>
+            <td class="redTd">S</td>
           </tr>
-          <tr>
-            <th>sun</th>
-            <th>mon</th>
-            <th>tue</th>
-            <th>wed</th>
-            <th>thu</th>
-            <th>fri</th>
-            <th>sat</th>
-          </tr>
-        </thead>
-        <tdata>
-          <tr></tr>
-        </tdata>
-      </table>
-      <div class="actions">
-        <div class="next-prev-button" onclick="changeMonth('prev')"><</div>
-        <div class="next-prev-button" onclick="changeMonth('next')">></div>
-      </div>
-      <div class="actions-2">
-        <div onclick="changeMonth('prev')">prev</div>
-        <div onclick="changeMonth('next')">next</div>
+          <tdata>
+            <tr></tr>
+          </tdata>
+        </table>
+        <div class="next-prev-button" onclick="changeMonth('next')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="white"
+            class="bi bi-chevron-double-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <script src="scripts.js"></script>

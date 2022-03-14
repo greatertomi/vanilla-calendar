@@ -1,3 +1,6 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
 th,
 td {
   border: 2px solid black;
@@ -7,52 +10,54 @@ th {
   padding: 10px;
   text-align: center;
 }
-.actions {
-  display: flex;
-  justify-content: space-around;
-  width: 300px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 25px;
-  font-weight: 600;
-  margin-top: 20px;
-  cursor: pointer;
+tr.border_bottom td {
+  border-bottom: 1px solid #adadad;
 }
-.actions-2 {
+.container {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  width: 300px;
-  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.calendar-div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tbody {
+  border: 5px solid black;
 }
 .next-prev-button {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: #3d3d3d;
+  background-color: #adadad;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.next-prev-button:hover {
+  background-color: #777777;
+}
+.redTd {
+  color: #ff0202;
+}
 tr:first-child th {
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  background-color: lightblue;
-  border-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  background: white;
 }
 td:hover {
   background-color: offwhite;
   box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.5);
 }
-td[colspan] {
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
-}
 tr th {
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   border: transparent;
-  background-color: lightgrey;
-  color: #3d3d3d;
 }
 tr td {
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   border: transparent;
 }
